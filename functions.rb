@@ -46,7 +46,7 @@ module Functions
   end
   #comparison
   def greater first, second, branch_1, branch_2
-    if first > second 
+    if first.to_i > second.to_i
        parse(branch_1)
     else 
        parse(branch_2)
@@ -62,7 +62,7 @@ module Functions
   end
   
   def less first, second, branch_1, branch_2
-    if first < second 
+    if first.to_i < second.to_i 
        parse(branch_1)
     else 
        parse(branch_2)

@@ -12,5 +12,9 @@
 			factorial,
 			##(sub,A,1)))))))'
 ##(segment_string,factorial,A)'
-####(print_str,enter integer value :)'
+##(print_str,enter integer value :)'
 #(call,factorial,##(read_str))'
+##(trace_on)'
+##(concat_str,mama myla ,##(read_str))'
+##(trace_off)'
+
