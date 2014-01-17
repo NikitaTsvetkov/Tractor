@@ -1,13 +1,4 @@
-module Functions
-  def get_char
-    state = `stty -g`
-    `stty raw -echo -icanon isig`
-  
-    STDIN.getc.chr
-  ensure
-    `stty #{state}`
-  end
-  
+module Functions 
   def get_marker_symbol i
     (i + 127).chr
   end
