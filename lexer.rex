@@ -4,8 +4,8 @@ macro
   LEFT_P	\(
   RIGHT_P	\)
   COMMA		\,
-  STRING    [\w\d\s]+ 
-  BLANK     [\s\t]+
+  STRING    [\w\d\s\:]+ 
+  BLANK     [\s\t\n]+
   	
  
 rule

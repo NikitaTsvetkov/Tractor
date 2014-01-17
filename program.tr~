@@ -1,0 +1,16 @@
+#(mul,5,4)'
+#(mul,5,4)'
+##(print_str,now we will evaluate factorial: )'
+##(define,
+	factorial,
+	(##(equals,
+		A,0,
+		1,
+		(##(mul,
+			A,
+			#(call,
+			factorial,
+			##(sub,A,1)))))))'
+##(segment_string,factorial,A)'
+####(print_str,enter integer value :)'
+#(call,factorial,##(read_str))'

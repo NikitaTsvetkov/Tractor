@@ -49,9 +49,7 @@ end
   @@forms = Hash.new()
   @@debug = true 
   @@marker = "'" 
-  def initialize
-    puts "hello"
-    
+  def initialize    
     @lexical = Lexical.new
     p @@forms
   end

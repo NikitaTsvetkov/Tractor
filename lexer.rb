@@ -57,7 +57,7 @@ class Lexical < Racc::Parser
     token = case @state
     when nil
       case
-      when (text = @ss.scan(/[\w\d\s]+/))
+      when (text = @ss.scan(/[\w\d\s\:]+/))
          action { [:STRING, text.to_s ]}
 
       when (text = @ss.scan(/\#/))
@@ -72,7 +72,7 @@ class Lexical < Racc::Parser
       when (text = @ss.scan(/\)/))
          action { [:RIGHT_P, text.to_s] }
 
-      when (text = @ss.scan(/[\s\t]+/))
+      when (text = @ss.scan(/[\s\t\n]+/))
         ;
 
       else

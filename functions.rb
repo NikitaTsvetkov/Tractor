@@ -46,15 +46,27 @@ module Functions
   end
   #comparison
   def greater first, second, branch_1, branch_2
-    first > second ? branch_1 : branch_2
+    if first > second 
+       parse(branch_1)
+    else 
+       parse(branch_2)
+    end
   end
   
   def equals first, second, branch_1, branch_2
-    first == second ? branch_1 : branch_2
+    if first.to_i == second.to_i 
+       parse(branch_1)
+    else 
+       parse(branch_2)
+    end
   end
   
   def less first, second, branch_1, branch_2
-    first < second ? branch_1 : branch_2
+    if first < second 
+       parse(branch_1)
+    else 
+       parse(branch_2)
+    end
   end
   
   #----------
@@ -72,7 +84,7 @@ module Functions
   end
   
   def call name , *args
-    temp_string = self.forms_array[name.to_sym]
+    temp_string = String.new(self.forms_array[name.to_sym])
     i = 1
     args.each do |arg|
       temp_string.gsub!(Regexp.new(get_marker_symbol(i)), arg)
