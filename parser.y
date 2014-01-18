@@ -51,7 +51,8 @@ end
   @@marker = "'" 
   def initialize    
     @lexical = Lexical.new
-    p @@forms
+    
+    p @@forms if @@debug
   end
   def parse(input)
     @lol = @lexical.scan_str(input) 
@@ -74,7 +75,7 @@ end
     @@marker
   end
   
-  def debug=(x)
+  def debug(x)
     @@debug = x
   end
   

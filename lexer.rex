@@ -19,8 +19,6 @@ rule
   
 inner
   def scan_str(code)
-  
-  puts "scanned string " + code
     scan_setup(code)
     tokens = []
     while token = next_token      

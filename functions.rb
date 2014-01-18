@@ -4,7 +4,7 @@ module Functions
   end
   
   def print_str str
-    print str
+    puts str
     nil
   end
   
@@ -48,7 +48,7 @@ module Functions
     if first.to_i == second.to_i 
        parse(branch_1)
     else 
-       parse(branch_2)
+       parse branch_2
     end
   end
   
@@ -92,10 +92,10 @@ module Functions
   end 
   
   def trace_on
-    debug = true
+    debug true
   end
   
   def trace_off
-    debug = false
+    debug false
   end
 end

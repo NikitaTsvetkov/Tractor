@@ -5,7 +5,7 @@ class Interpreter
     @evaluator = StringExecutor.new
   end
   def print
-    @evaluator.parse("##(print_str,#(equals,1,2,(##(add,2,3)),(##(print_str,hehehey))))") ###(print_str, ##(add, 3 , ##(sub, 2, 1)))
+    @evaluator.parse("##(equals,1,2,(##(add,2,3)),(##(print_str,hehehey)))") ###(print_str, ##(add, 3 , ##(sub, 2, 1)))
     @evaluator.parse "##(define,mul3,(#(mul,A,#(mul,B,C))))"
     @evaluator.parse "##(segment_string,mul3,A,B,C)"
     @evaluator.parse "##(print_str,#(call,mul3,2,3,4))"
@@ -32,15 +32,15 @@ class Interpreter
     megaline.gsub! /\n/, ""
     megaline.gsub! /\t/, ""
     instructions = megaline.split /\'/
-    instructions.each {|str| p @evaluator.parse(str) }
+    instructions.each {|str| @evaluator.parse(str) }
   end
   
 end
-
-
+Interpreter.new().print
 #there will be init
-if  ARGV.empty?
-  Interpreter.new().print
-else 
-  Interpreter.new().from_file(ARGV[0]) 
-end
+#if  ARGV.empty?
+#  Interpreter.new().console
+#else 
+  Interpreter.new().from_file("program.tr")
+  Interpreter.new().console 
+#end

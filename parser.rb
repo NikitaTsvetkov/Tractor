@@ -17,7 +17,8 @@ module_eval(<<'...end parser.y/module_eval...', 'parser.y', 48)
   @@marker = "'" 
   def initialize    
     @lexical = Lexical.new
-    p @@forms
+    
+    p @@forms if @@debug
   end
   def parse(input)
     @lol = @lexical.scan_str(input) 
@@ -40,7 +41,7 @@ module_eval(<<'...end parser.y/module_eval...', 'parser.y', 48)
     @@marker
   end
   
-  def debug=(x)
+  def debug(x)
     @@debug = x
   end
   
